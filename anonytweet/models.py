@@ -2,9 +2,9 @@ from django.db import models
 import django.dispatch
 from django.contrib.auth.hashers import check_password, make_password
 
-"""Links an IP to a 2-character 'username' """
+"""Links a hashed IP address to a 2-character 'username' """
 class Tweeter(models.Model):
-    username = models.CharField(max_length=2)
+    username = models.CharField(max_length=2, unique=True)
     ip = models.CharField(max_length=128, unique=True)
 
     class Meta:
