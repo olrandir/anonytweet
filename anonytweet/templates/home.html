@@ -1,0 +1,14 @@
+<html>
+  <head>
+  </head>
+  <body>
+  	<form id="tweet" method="POST">
+  		{%csrf_token%}
+		<textarea name="tweet" cols="25" rows="5"></textarea>
+  		<input type="submit" value="Tweet">
+	</form>
+	{% if previous_tweet %}
+	<div>{{ previous_tweet }}</div>
+	{% endif %}
+  </body>
+</html>
