@@ -3,6 +3,9 @@
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+import os
+PROJECT_ROOT_PATH = os.path.dirname(__file__)
+
 ADMINS = (
     ('some guy', 'vattnafjael@gmail.com'),
 )
@@ -103,9 +106,7 @@ ROOT_URLCONF = 'anonytweet.urls'
 WSGI_APPLICATION = 'anonytweet.wsgi.application'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_ROOT_PATH, '_templates')
 )
 
 INSTALLED_APPS = (
@@ -117,17 +118,16 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'anonytweet',
     'south',
-    # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+    'devutils',
+    'django.contrib.admin',
 )
 
-# A sample logging configuration. The only tangible logging
-# performed by this configuration is to send an email to
-# the site admins on every HTTP 500 error when DEBUG=False.
-# See http://docs.djangoproject.com/en/dev/topics/logging for
-# more details on how to customize your logging configuration.
+# TWITTER settings
+CONSUMER_KEY = 'E8yls4LAT0mN35iy57UoSg'
+CONSUMER_SECRET = 'yk23Xk05QFixHRnQahCUREDKrvyB5xlM98uC2CRI6U'
+ACCESS_KEY = 'paste your Access Key here'
+ACCESS_SECRET = 'paste your Access Secret here'
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
